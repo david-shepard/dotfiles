@@ -5,6 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+## Debug!
+[[ -n "$DEBUG" && "$DEBUG" == "1" ]] && echo "(Debug) ${0} PATH = $PATH \n"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -121,18 +124,40 @@ export GH_TOKEN='ghp_YCshitialmostcommitedasecret'
 # -------
 alias sublime=subl
 
+# -------------------
+# Edit various files
+# -------------------
 alias edit-zshconfig="sublime ~/.zshrc"
 alias edit-ohmyzsh="sublime ~/.oh-my-zsh"
+alias edit-p10k="sublime ~/.p10k.zsh"
 alias edit-sshconfig="sublime ~/.ssh/config"
+alias edit-claude="sublime '~/Library/Application Support/Claude/claude_desktop_config.json'"
+alias edit-opencode="sublime ~/.config/opencode/opencode.jsonc"
 
+# reload oh-my-zsh
 alias reload='omz reload'
 
 # python
 alias python=python3
 alias pip=pip3
+alias notebook='uv run --with jupyter jupyter notebook'
+alias uvp="uv pip"
+alias uvn="echo -e 'Run: \n uv run ipython kernel install --user --name=notebook-name --display-name \"Name of notebook\" \n jupyter notebook'"
 
 # kube
 alias kc=kubectl
+
+# kube
+export KUBECONFIG="$HOME/.kube/config:$HOME/.kube/config-oracle:$HOME/.kube/config-proxmox"
+alias kubectl=kubecolor
+alias kc=kubectl
+
+# tailscale
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+
+# claude
+alias claude="$HOME/.claude/local/claude"
+
 
 # generate password from /dev/random
 alias getpass='head -c 16 /dev/random | base64 | tr -dc "[:alnum:]" | tee >(pbcopy)'
@@ -146,6 +171,12 @@ alias sp='PS1="\[\e[0;32m\]\W \$\[\e[0m\] "'
 alias op='PS1="$ORIGINAL_PS1"'
 
 
+# allow app through mac quarantine
+alias allowapp='sudo xattr -cr' 
+
+# steamguard approval 
+alias approve-steam='steamguard confirm && steamguard approve'
+
 # ---------
 # functions
 # ---------
@@ -154,6 +185,33 @@ cht() {
   curl cht.sh/"$@"
 }
 
+venv_activate() {
+  local venv_path
+  if [ -f .venv/bin/activate ]; then
+    venv_path='.venv/bin/activate'
+  elif [ -f venv/bin/activate ]; then
+    venv_path='venv/bin/activate'
+  else
+    echo "Error: no 'venv' or '.venv' dir found, exiting"
+    return 1
+  fi 
+  echo "sourcing     $venv_path"
+  source "$venv_path"
+}
+
+# save temp secrets to file
+getpass() {
+  local FNAME="$HOME/sometempfile.txt"
+  if [ -z "$1" ]; then
+    echo -e "Error: Empty parameter unsupported \nUsage: \"$0 <website/description of temporary password>\""
+    return 1
+  fi
+  local INFO="$1"
+  local SECRET=$(head -c 16 /dev/random | base64 | tr -dc "[:alnum:]" | tee >(pbcopy))
+  # markdown table format
+  local ROW=$(printf '| %s | %s |' "$INFO" "$SECRET")
+  echo "$ROW" | tee -a "$FNAME"
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -175,5 +233,15 @@ export NODE_TLS_REJECT_UNAUTHORIZED=0
 unsetopt correct_all
 setopt correct
 
+# kubecolor (kubectl completions are in kubectl plugin above)
+compdef kubecolor=kubectl
+
+# ------------------
+# shell completions
+# ------------------
+source <(helm_ls completion zsh)
+source <(flux completion zsh)
+source <(gitops completion zsh)
+source <(codex completion zsh)
 source "$HOME/.cargo/env"
 source <(helm_ls completion zsh)
