@@ -1,0 +1,247 @@
+tap "anomalyco/tap", "https://github.com/anomalyco/homebrew-tap.git"
+tap "atlassian/acli"
+tap "domt4/autoupdate", "https://github.com/DomT4/homebrew-autoupdate"
+tap "dsxack/tap"
+tap "fluxcd/tap"
+tap "localstack/tap"
+tap "mactat/mactat"
+tap "manaflow-ai/cmux"
+tap "marccarre/ssh-to-ansible"
+tap "oven-sh/bun"
+tap "rhysd/hgrep", "https://github.com/rhysd/hgrep"
+tap "tsonglew/dutis"
+tap "weaveworks/tap"
+tap "xberg-io/tap", "https://github.com/xberg-io/homebrew-tap.git"
+# Run your GitHub Actions locally
+brew "act"
+# Simple, modern, secure file encryption
+brew "age"
+# GitOps Continuous Delivery for Kubernetes
+brew "argocd"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Gnome disk usage analyzer
+brew "baobab"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Arbitrary precision numeric processing language
+brew "bc"
+# Implementation of the DNS protocols
+brew "bind"
+# Create and view interactive cheat sheets for *nix commands
+brew "cheat"
+# Cross-platform make
+brew "cmake"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# OpenAI's coding agent that runs in your terminal
+brew "codex"
+# Visually compare two PDF files
+brew "diff-pdf"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc@14"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
+# GitHub command-line tool
+brew "gh"
+# Highly customizable changelog generator
+brew "git-cliff"
+# Command-line option parsing utility
+brew "gnu-getopt"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# Kubernetes package manager
+brew "helm"
+# Language server for Helm
+brew "helm-ls"
+# Grep with human-friendly search results
+brew "hgrep"
+# Update of iperf: measures TCP, UDP, and SCTP bandwidth
+brew "iperf3"
+# Handy way to save and run project-specific commands
+brew "just"
+# Colorize your kubectl output
+brew "kubecolor"
+# FAST Kubernetes manifests validator, with support for Custom Resources!
+brew "kubeconform"
+# Tool that can switch between kubectl contexts easily and create aliases
+brew "kubectx"
+# Template-free customization of Kubernetes YAML manifests
+brew "kustomize"
+# Layer Four Traceroute (LFT), an advanced traceroute tool
+brew "lft"
+# Secure hashing function
+brew "libb2"
+# Implementation of the file(1) command
+brew "libmagic"
+# GNOME XML library
+brew "libxml2"
+# C XSLT library for GNOME
+brew "libxslt"
+# Modern and intuitive terminal-based text editor
+brew "micro"
+# Cross platform, open source .NET development framework
+brew "mono"
+# Remote terminal application
+brew "mosh"
+# Mock AWS services
+brew "moto"
+# Tail multiple files in one terminal simultaneously
+brew "multitail"
+# Experimental optional static type checker for Python
+brew "mypy"
+# Free (GNU) replacement for the Pico text editor
+brew "nano"
+# Improved Nano Syntax Highlighting Files
+brew "nanorc"
+# Interactive cheatsheet tool for the command-line
+brew "navi"
+# Network scanner with features like WiFi scanning, packetdump and more
+brew "netscanner"
+# Small build system for use with gyp or CMake
+brew "ninja"
+# Port scanning utility for large networks
+brew "nmap"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node@22"
+# Package manager for Microsoft development platform including .NET
+brew "nuget"
+# Oracle Cloud Infrastructure CLI
+brew "oci-cli"
+# AI coding agent, built for the terminal
+brew "opencode"
+# OCI Registry As Storage
+brew "oras"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Fast, disk space efficient package manager
+brew "pnpm"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Unofficial Bitwarden CLI client
+brew "rbw"
+# Rsync for cloud storage
+brew "rclone"
+# Persistent key-value database, with built-in net interface
+brew "redis"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+# Simple keystroke visualizer
+brew "showkey"
+# Editor of encrypted files
+brew "sops"
+# Tail multiple Kubernetes pods & their containers
+brew "stern"
+# User interface to the TELNET protocol
+brew "telnet"
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Internet file retriever
+brew "wget"
+# Tools for the WireGuard secure network tunnel
+brew "wireguard-tools"
+# Linter for YAML files
+brew "yamllint"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Configure Gatekeeper, unquarantine and self-sign apps
+cask "alienator88-sentinel"
+# Audio utility
+cask "background-music"
+# Desktop password and login vault
+cask "bitwarden"
+# Visualise and analyse Claude Code session executions
+cask "claude-devtools"
+# Browser for SQLite databases
+cask "db-browser-for-sqlite"
+# Utilities designed to make common development tasks easier
+cask "devtoys"
+# Cross-platform Git credential storage for multiple hosting providers
+cask "git-credential-manager"
+# Game development engine
+cask "godot@3"
+# Desktop automation application
+cask "hammerspoon"
+# UI for Kubernetes
+cask "headlamp"
+# AI-powered productivity tool for the command-line
+cask "kiro-cli"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Clipboard manager
+cask "maccy"
+# File system integration
+cask "macfuse"
+# Markdown editor
+cask "mark-text"
+# Process monitor
+cask "processspy"
+# Tool to reverse the direction of scrolling
+cask "scroll-reverser"
+# Command-line client for Steam
+cask "steamcmd"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin"
+# Multimedia player
+cask "vlc"
+# Multiplayer code editor
+cask "zed"
+vscode "anthropic.claude-code"
+vscode "github.vscode-github-actions"
+vscode "hashicorp.terraform"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-python.debugpy"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-vscode-remote.remote-containers"
+go "github.com/aca/agec"
+go "github.com/spf13/cobra-cli"
+go "golang.org/x/tools/cmd/gonew"
+go "github.com/ddddddO/gtree/cmd/gtree"
+go "github.com/myENA/mkpasswd"
+go "github.com/korotovsky/slack-mcp-server/cmd/slack-mcp-server"
+go "github.com/google/yamlfmt/cmd/yamlfmt"
+go "github.com/hamza02x/zip-split-independent"
+cargo "steamguard-cli"
+uv "claude-monitor"
+uv "html-to-markdown"
+uv "pipreqs"
+uv "ptpython"
+krew "krew"
+krew "ktop"
+krew "neat"
+npm "@bitwarden/cli"
+npm "ccusage"
+npm "firecrawl-cli"
+npm "git-cz"
+npm "git-standup"
+npm "netlify-cli"
+npm "typescript"
+npm "yaml-language-server"
